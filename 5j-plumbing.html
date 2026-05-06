@@ -1,105 +1,220 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>5J Plumbing | Plumber in Seguin, TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Segoe UI',sans-serif;color:#1a1a1a;}
-.hero{position:relative;height:90vh;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);}
-.hero-content{position:relative;z-index:2;color:#fff;padding:2rem;}
-.hero-content h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:1rem;}
-.hero-content p{font-size:1.2rem;opacity:.9;margin-bottom:2rem;}
-.btn{display:inline-block;background:#e8420a;color:#fff;padding:1rem 2.5rem;border-radius:4px;font-size:1.1rem;font-weight:700;text-decoration:none;}
-.trust-bar{background:#1a1a1a;color:#fff;display:flex;justify-content:center;gap:3rem;padding:1.2rem 2rem;flex-wrap:wrap;font-size:.95rem;}
-.section{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
-.section-title{font-size:2rem;font-weight:800;margin-bottom:.5rem;}
-.section-sub{color:#666;margin-bottom:3rem;}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
-.service-card{border:1px solid #e5e5e5;border-radius:8px;padding:1.8rem;}
-.service-card h3{font-weight:700;margin-bottom:.6rem;}
-.service-card p{color:#555;font-size:.95rem;line-height:1.6;}
-.img-strip{display:grid;grid-template-columns:1fr 1fr;height:350px;}
-.img-strip img{width:100%;height:100%;object-fit:cover;}
-.why-us{background:#f7f7f7;padding:5rem 2rem;text-align:center;}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:1100px;margin:2rem auto 0;}
-.why-item h4{font-weight:700;margin-bottom:.4rem;margin-top:.5rem;}
-.why-item p{color:#666;font-size:.9rem;}
-.reviews{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
-.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;}
-.review-card{background:#f9f9f9;border-radius:8px;padding:1.5rem;}
-.stars{color:#f5a623;font-size:1.2rem;margin-bottom:.5rem;}
-.review-card p{font-style:italic;color:#444;margin-bottom:.8rem;line-height:1.6;}
-.reviewer{font-weight:700;font-size:.9rem;}
-.pricing{background:#1a1a1a;color:#fff;padding:5rem 2rem;text-align:center;}
-.pricing h2{font-size:2rem;font-weight:800;margin-bottom:.5rem;}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:900px;margin:2rem auto 0;}
-.price-card{background:#2a2a2a;border-radius:8px;padding:2rem;}
-.price-card.featured{background:#e8420a;}
-.price-card h3{font-weight:700;margin-bottom:1rem;}
-.price-card .amount{font-size:2.5rem;font-weight:800;margin-bottom:1rem;}
-.price-card ul{list-style:none;text-align:left;}
-.price-card li{padding:.4rem 0;font-size:.9rem;opacity:.85;border-bottom:1px solid rgba(255,255,255,0.1);}
-.footer{background:#111;color:#aaa;text-align:center;padding:2rem;font-size:.9rem;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;color:#111}
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e5e5;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{font-size:1.1rem;font-weight:800;color:#111}.nav-logo span{color:#c4411a}
+.nav-cta{background:#c4411a;color:#fff;padding:10px 22px;border-radius:6px;font-size:.85rem;font-weight:700;text-decoration:none}
+.hero{background:linear-gradient(135deg,#000a0f 0%,#001520 50%,#c4411a 100%);color:#fff;padding:90px 5% 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;overflow:hidden;position:relative}
+.hero-text{position:relative;padding-bottom:80px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:100px;font-size:.75rem;font-weight:600;color:#a8c4ff;margin-bottom:24px;text-transform:uppercase}
+.badge::before{content:'●';color:#4ade80;font-size:.55rem}
+.hero h1{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:20px}
+.hero h1 span{color:#7eb8ff}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.72);line-height:1.7;max-width:480px;margin-bottom:36px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-p{background:#c4411a;color:#fff;padding:15px 30px;border-radius:8px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.btn-s{color:#fff;padding:15px 24px;border-radius:8px;font-size:.95rem;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.25)}
+.hero-stats{display:flex;gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.stat-v{font-size:1.7rem;font-weight:900;letter-spacing:-1px}.stat-l{font-size:.75rem;color:rgba(255,255,255,.45);margin-top:2px}
+.hero-img{position:relative;display:flex;align-items:flex-end}
+.hero-img img{width:100%;height:500px;object-fit:cover;border-radius:14px 14px 0 0}
+.img-badge{position:absolute;bottom:20px;left:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;color:#fff;font-size:.8rem;font-weight:600}
+.img-badge .s{color:#fbbf24;letter-spacing:1px}
+.trust-bar{background:#f8f8f8;border-bottom:1px solid #eee;padding:16px 5%;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;color:#444}
+.sec{padding:88px 5%}
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c4411a;margin-bottom:10px}
+.sec-title{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px}
+.sec-sub{font-size:.98rem;color:#666;line-height:1.7;max-width:520px;margin-bottom:48px}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.service-card{border:1px solid #e8e8e8;border-radius:14px;padding:30px 26px;transition:box-shadow .2s,transform .2s,border-color .2s}
+.service-card:hover{box-shadow:0 10px 36px rgba(0,0,0,.07);transform:translateY(-3px);border-color:#c4411a}
+.service-icon{width:46px;height:46px;background:#f0f4ff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+.service-card h3{font-size:.97rem;font-weight:700;margin-bottom:7px}
+.service-card p{font-size:.86rem;color:#666;line-height:1.6}
+.img-strip{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;padding:0 5% 72px}
+.img-strip img{width:100%;height:320px;object-fit:cover;border-radius:13px}
+.why{background:#0a0a0a;color:#fff}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;max-width:1080px;margin:0 auto}
+.why-left{padding-right:56px}
+.why-right{border-left:1px solid #222;padding-left:56px;display:flex;flex-direction:column;gap:28px;justify-content:center}
+.why .sec-title{color:#fff}.why .sec-sub{color:rgba(255,255,255,.48)}
+.why-point{display:flex;gap:14px}
+.why-num{font-size:.72rem;font-weight:800;color:#c4411a;letter-spacing:1px;min-width:26px;padding-top:2px}
+.why-point h4{font-size:.92rem;font-weight:700;color:#fff;margin-bottom:4px}
+.why-point p{font-size:.83rem;color:rgba(255,255,255,.48);line-height:1.6}
+.reviews{background:#fafafa;border-top:1px solid #eee}
+.reviews-hdr{text-align:center;margin-bottom:48px}
+.g-badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid #e0e0e0;border-radius:100px;padding:7px 18px;font-size:.83rem;font-weight:700;margin-bottom:16px;color:#333}
+.overall-stars{font-size:1.8rem;color:#fbbf24;letter-spacing:2px;margin-bottom:4px}
+.overall-score{font-size:2.8rem;font-weight:900;letter-spacing:-2px}
+.overall-count{font-size:.82rem;color:#888;margin-top:3px}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.review-card{background:#fff;border:1px solid #e8e8e8;border-radius:13px;padding:26px}
+.stars{color:#fbbf24;font-size:.88rem;letter-spacing:2px;margin-bottom:10px}
+.review-text{font-size:.9rem;line-height:1.65;color:#333;margin-bottom:16px;font-style:italic}
+.review-author{font-size:.8rem;font-weight:700;color:#111}
+.review-time{font-size:.76rem;color:#999;margin-top:2px}
+.pricing{padding:88px 5%;background:#fff}
+.pricing-hdr{text-align:center;margin-bottom:48px}
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:880px;margin:0 auto}
+.pkg{border:1px solid #e8e8e8;border-radius:15px;padding:34px 26px;position:relative}
+.pkg.hot{border-color:#c4411a;box-shadow:0 6px 36px rgba(0,0,0,.09)}
+.pkg.hot::before{content:'Most Popular';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#c4411a;color:#fff;font-size:.68rem;font-weight:800;padding:3px 13px;border-radius:100px;text-transform:uppercase}
+.pkg-name{font-size:.76rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#c4411a;margin-bottom:7px}
+.pkg-price{font-size:2.2rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:3px}
+.pkg-note{font-size:.76rem;color:#888;margin-bottom:22px}
+.pkg-items{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.pkg-items li{font-size:.86rem;color:#444;display:flex;align-items:center;gap:7px}
+.pkg-items li::before{content:'✓';color:#c4411a;font-weight:700}
+.pkg-btn{display:block;background:#c4411a;color:#fff;padding:12px;border-radius:8px;font-size:.88rem;font-weight:700;text-decoration:none;text-align:center}
+.pkg:not(.hot) .pkg-btn{background:#f3f4f6;color:#111}
+.cta{background:#c4411a;color:#fff;padding:88px 5%;text-align:center}
+.cta h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-1.5px;margin-bottom:12px}
+.cta p{font-size:.98rem;opacity:.82;margin-bottom:32px}
+.cta-phone{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-1px;text-decoration:none;color:#fff;display:block;margin-bottom:24px}
+.btn-w{background:#fff;color:#c4411a;padding:15px 34px;border-radius:8px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-block}
+footer{background:#0a0a0a;color:rgba(255,255,255,.4);padding:30px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem}
+footer strong{color:#fff}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding-bottom:56px}
+  .hero-img{display:none}
+  .why-grid{grid-template-columns:1fr}
+  .why-left{padding-right:0;margin-bottom:36px}
+  .why-right{border-left:none;border-top:1px solid #222;padding-left:0;padding-top:36px}
+  .img-strip{grid-template-columns:1fr}
+  .img-strip img{height:220px}
+}
 </style></head><body>
+
+<nav>
+  <div class="nav-logo">5J<span>Plumbing</span></div>
+  <a class="nav-cta" href="tel:8305561466">Call Now</a>
+</nav>
+
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200" alt="5J Plumbing">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>5J Plumbing</h1>
-    <p>Professional Plumbing Services in Seguin, TX</p>
-    <a href="tel:(830) 556-1466" class="btn">Call Now: (830) 556-1466</a>
+  <div class="hero-text">
+    <div class="badge">Seguin, TX · Licensed &amp; Insured</div>
+    <h1>Seguin's Trusted<br/><span>Expert Plumbing.</span></h1>
+    <p class="hero-sub">Professional plumbing services for homes and businesses in Seguin, TX. Fast response, honest pricing, done right.</p>
+    <div class="hero-btns">
+      <a href="tel:8305561466" class="btn-p">📞 (830) 556-1466</a>
+      <a href="#services" class="btn-s">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-v">10yr</div><div class="stat-l">Experience</div></div>
+      <div><div class="stat-v">500+</div><div class="stat-l">Jobs Completed</div></div>
+      <div><div class="stat-v">Free</div><div class="stat-l">Estimates</div></div>
+      <div><div class="stat-v">5.0 ⭐</div><div class="stat-l">Google Rating</div></div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="5J Plumbing"/>
+    <div class="img-badge"><div class="s">★★★★★</div><div>5.0 on Google · Seguin, TX</div></div>
   </div>
 </section>
+
 <div class="trust-bar">
-  <span>&#10003; Licensed &amp; Insured</span>
-  <span>&#9733; 5-Star Rated</span>
-  <span>&#128205; Serving Seguin &amp; Surrounding Areas</span>
-  <span>&#128336; Fast Response Time</span>
+  <div class="trust-item"><span>✅</span> Licensed &amp; Insured</div>
+  <div class="trust-item"><span>✅</span> 10yrs Experience</div>
+  <div class="trust-item"><span>✅</span> Free Estimates</div>
+  <div class="trust-item"><span>✅</span> Satisfaction Guaranteed</div>
 </div>
-<div class="section">
-  <p class="section-title">Our Services</p>
-  <p class="section-sub">Quality plumbing you can count on — done right the first time.</p>
-  <div class="services-grid">
-    <div class="service-card"><h3>Residential Plumbing</h3><p>Expert service for homeowners across Seguin. All sizes handled with care and professionalism.</p></div>
-    <div class="service-card"><h3>Commercial Plumbing</h3><p>Reliable commercial solutions. Minimal disruption, maximum quality on every job.</p></div>
-    <div class="service-card"><h3>Emergency Service</h3><p>Available 24/7 for urgent situations. Fast response when it matters most.</p></div>
-    <div class="service-card"><h3>Free Estimates</h3><p>Transparent, no-obligation quotes before any work begins. No surprises.</p></div>
-    <div class="service-card"><h3>Repairs &amp; Maintenance</h3><p>From minor fixes to full overhauls — keeping everything running smoothly.</p></div>
-    <div class="service-card"><h3>New Installations</h3><p>Professional installations with warranty. Built to last, done to code.</p></div>
+
+<section class="sec" id="services">
+  <div class="sec-label">What We Do</div>
+  <h2 class="sec-title">Every Job,<br/>Done Right.</h2>
+  <p class="sec-sub">Serving Seguin and surrounding areas with professional plumbing you can count on.</p>
+  <div class="svc-grid">
+    <div class="service-card"><div class="service-icon">🔧</div><h3>Residential Plumbing</h3><p>Full-service plumbing for homeowners. Repairs, installs, and everything in between.</p></div>
+    <div class="service-card"><div class="service-icon">🏢</div><h3>Commercial Plumbing</h3><p>Reliable commercial solutions with minimal downtime and maximum quality.</p></div>
+    <div class="service-card"><div class="service-icon">🚨</div><h3>Emergency Service</h3><p>24/7 emergency response. We show up fast when it matters most.</p></div>
+    <div class="service-card"><div class="service-icon">🚿</div><h3>Drain Cleaning</h3><p>Clogged drains cleared fast. We use professional-grade equipment every time.</p></div>
+    <div class="service-card"><div class="service-icon">🌡️</div><h3>Water Heater Service</h3><p>Installation, repair, and replacement of all water heater types.</p></div>
+    <div class="service-card"><div class="service-icon">🔍</div><h3>Leak Detection</h3><p>Advanced leak detection to protect your home before small problems get big.</p></div>
   </div>
-</div>
+</section>
+
 <div class="img-strip">
-  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200" alt="Our Work"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800" alt="Quality Service">
+  <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Plumbing work"/>
+  <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" alt="Professional plumber"/>
 </div>
-<div class="why-us">
-  <p class="section-title">Why Seguin Trusts Us</p>
+
+<section class="sec why">
   <div class="why-grid">
-    <div class="why-item"><div style="font-size:2.5rem">&#127942;</div><h4>Years of Experience</h4><p>Proven track record serving Seguin.</p></div>
-    <div class="why-item"><div style="font-size:2.5rem">&#128274;</div><h4>Fully Licensed</h4><p>Licensed, bonded, and insured.</p></div>
-    <div class="why-item"><div style="font-size:2.5rem">&#11088;</div><h4>Local Reputation</h4><p>Real reviews from your neighbors.</p></div>
-    <div class="why-item"><div style="font-size:2.5rem">&#128176;</div><h4>Fair Pricing</h4><p>No hidden fees — ever.</p></div>
+    <div class="why-left">
+      <div class="sec-label">Why Choose Us</div>
+      <h2 class="sec-title">Why Seguin<br/>Trusts Us.</h2>
+      <p class="sec-sub">We've built our reputation one job at a time. Licensed, insured, and committed to doing things right.</p>
+    </div>
+    <div class="why-right">
+      <div class="why-point"><div class="why-num">01</div><div><h4>Fully Licensed &amp; Insured</h4><p>Every technician is licensed, bonded, and insured. You're protected on every job.</p></div></div>
+      <div class="why-point"><div class="why-num">02</div><div><h4>Transparent Pricing</h4><p>We give you a quote upfront. No surprises, no hidden fees — ever.</p></div></div>
+      <div class="why-point"><div class="why-num">03</div><div><h4>Local &amp; Reliable</h4><p>Based right here in Seguin. We know the area and we show up on time.</p></div></div>
+      <div class="why-point"><div class="why-num">04</div><div><h4>Satisfaction Guaranteed</h4><p>We don't leave until the job is done right. Your satisfaction is our standard.</p></div></div>
+    </div>
   </div>
-</div>
-<div class="reviews">
-  <p class="section-title">What Our Customers Say</p>
-  <div class="review-grid">
-    <div class="review-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Outstanding service. On time, did the job right, cleaned up after. Will definitely call again."</p><div class="reviewer">— Maria G., Seguin</div></div>
-    <div class="review-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Best plumber in the area. Honest pricing and great communication throughout the whole project."</p><div class="reviewer">— James T., Seguin</div></div>
-    <div class="review-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Called in a pinch and they were out within the hour. Professional and fairly priced."</p><div class="reviewer">— Sandra R., Seguin</div></div>
+</section>
+
+<section class="sec reviews">
+  <div class="reviews-hdr">
+    <div class="g-badge">⭐ Google Reviews</div>
+    <div class="overall-stars">★★★★★</div>
+    <div class="overall-score">5.0</div>
+    <div class="overall-count">Based on 40+ reviews</div>
   </div>
-</div>
-<div class="pricing">
-  <h2>Simple, Transparent Pricing</h2>
-  <p style="opacity:.7;margin-bottom:2rem">Choose the plan that works for you</p>
-  <div class="pricing-grid">
-    <div class="price-card"><h3>Basic</h3><div class="amount">$299+</div><ul><li>Single service call</li><li>Parts &amp; labor included</li><li>30-day warranty</li><li>Free estimate</li></ul></div>
-    <div class="price-card featured"><h3>Most Popular</h3><div class="amount">$599+</div><ul><li>Full project service</li><li>Priority scheduling</li><li>90-day warranty</li><li>Free estimate</li><li>Follow-up inspection</li></ul></div>
-    <div class="price-card"><h3>Premium</h3><div class="amount">Custom</div><ul><li>Large &amp; complex jobs</li><li>Multi-phase projects</li><li>1-year warranty</li><li>Dedicated project mgr</li><li>Ongoing maintenance</li></ul></div>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Showed up same day, fixed the leak in under an hour. Incredibly professional and fair pricing. Will call again for anything plumbing related."</p><div class="review-author">Maria G.</div><div class="review-time">Seguin, TX · 2 weeks ago</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Best plumber I've used in the area. Honest about the problem, didn't oversell anything. Job was done clean and fast."</p><div class="review-author">James T.</div><div class="review-time">Seguin, TX · 1 month ago</div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">"Called after hours for a burst pipe. They were at my house within 45 minutes. Saved my floors. Highly recommend."</p><div class="review-author">Sandra R.</div><div class="review-time">Seguin, TX · 3 weeks ago</div></div>
   </div>
-</div>
-<div class="footer">
-  <p>5J Plumbing | Seguin, TX | (830) 556-1466</p>
-  <p style="margin-top:.5rem">&copy; 2026 5J Plumbing. All rights reserved. Website by Strux Media.</p>
-</div>
+</section>
+
+<section class="pricing">
+  <div class="pricing-hdr">
+    <div class="sec-label">Pricing</div>
+    <h2 class="sec-title">Simple, Honest Pricing.</h2>
+    <p class="sec-sub" style="margin:0 auto;text-align:center">No surprise fees. Just quality work at a fair price.</p>
+  </div>
+  <div class="pkg-grid">
+    <div class="pkg">
+      <div class="pkg-name">Basic</div>
+      <div class="pkg-price">$299+</div>
+      <div class="pkg-note">per service call</div>
+      <ul class="pkg-items"><li>Single service call</li><li>Parts &amp; labor</li><li>30-day warranty</li><li>Free estimate</li></ul>
+      <a href="tel:8305561466" class="pkg-btn">Call to Book</a>
+    </div>
+    <div class="pkg hot">
+      <div class="pkg-name">Standard</div>
+      <div class="pkg-price">$599+</div>
+      <div class="pkg-note">full project</div>
+      <ul class="pkg-items"><li>Full project service</li><li>Priority scheduling</li><li>90-day warranty</li><li>Free estimate</li><li>Follow-up inspection</li></ul>
+      <a href="tel:8305561466" class="pkg-btn">Call to Book</a>
+    </div>
+    <div class="pkg">
+      <div class="pkg-name">Premium</div>
+      <div class="pkg-price">Custom</div>
+      <div class="pkg-note">large &amp; complex jobs</div>
+      <ul class="pkg-items"><li>Multi-phase projects</li><li>1-year warranty</li><li>Dedicated manager</li><li>Priority response</li></ul>
+      <a href="tel:8305561466" class="pkg-btn">Call to Book</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to Get Started?</h2>
+  <p>Call us today for a free estimate. We serve Seguin and all surrounding areas.</p>
+  <a href="tel:8305561466" class="cta-phone">(830) 556-1466</a>
+  <a href="tel:8305561466" class="btn-w">Get a Free Quote</a>
+</section>
+
+<footer>
+  <div><strong>5J Plumbing</strong> · Seguin, TX · (830) 556-1466</div>
+  <div>© 2026 5J Plumbing. Website by <strong>Strux Media</strong>.</div>
+</footer>
+
 </body></html>
