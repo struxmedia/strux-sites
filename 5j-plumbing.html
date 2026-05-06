@@ -8,20 +8,23 @@
 nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e5e5;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px}
 .nav-logo{font-size:1.1rem;font-weight:800;color:#111}.nav-logo span{color:#c4411a}
 .nav-cta{background:#c4411a;color:#fff;padding:10px 22px;border-radius:6px;font-size:.85rem;font-weight:700;text-decoration:none}
-.hero{background:linear-gradient(135deg,#000a0f 0%,#001520 50%,#c4411a 100%);color:#fff;padding:90px 5% 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;overflow:hidden;position:relative}
-.hero-text{position:relative;padding-bottom:80px}
+.hero{position:relative;color:#fff;padding:90px 5% 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;overflow:hidden;min-height:600px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.18}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(135deg,#000a0f 0%,#001520 55%,#c4411acc 100%);z-index:1}
+.hero-text{position:relative;z-index:2;padding-bottom:80px}
+.hero-img-col{position:relative;z-index:2;display:flex;align-items:flex-end}
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:100px;font-size:.75rem;font-weight:600;color:#a8c4ff;margin-bottom:24px;text-transform:uppercase}
 .badge::before{content:'●';color:#4ade80;font-size:.55rem}
 .hero h1{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:20px}
 .hero h1 span{color:#7eb8ff}
-.hero-sub{font-size:1rem;color:rgba(255,255,255,.72);line-height:1.7;max-width:480px;margin-bottom:36px}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.75);line-height:1.7;max-width:480px;margin-bottom:36px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-p{background:#c4411a;color:#fff;padding:15px 30px;border-radius:8px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.25)}
-.btn-s{color:#fff;padding:15px 24px;border-radius:8px;font-size:.95rem;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.25)}
-.hero-stats{display:flex;gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.btn-p{background:#c4411a;color:#fff;padding:15px 30px;border-radius:8px;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.btn-s{color:#fff;padding:15px 24px;border-radius:8px;font-size:.95rem;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,.3)}
+.hero-stats{display:flex;gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12);flex-wrap:wrap}
 .stat-v{font-size:1.7rem;font-weight:900;letter-spacing:-1px}.stat-l{font-size:.75rem;color:rgba(255,255,255,.45);margin-top:2px}
-.hero-img{position:relative;display:flex;align-items:flex-end}
-.hero-img img{width:100%;height:500px;object-fit:cover;border-radius:14px 14px 0 0}
+.hero-img-col img{width:100%;height:500px;object-fit:cover;border-radius:14px 14px 0 0}
 .img-badge{position:absolute;bottom:20px;left:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;color:#fff;font-size:.8rem;font-weight:600}
 .img-badge .s{color:#fbbf24;letter-spacing:1px}
 .trust-bar{background:#f8f8f8;border-bottom:1px solid #eee;padding:16px 5%;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
@@ -82,7 +85,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.4);padding:30px 5%;display:fle
 footer strong{color:#fff}
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;padding-bottom:56px}
-  .hero-img{display:none}
+  .hero-img-col{display:none}
   .why-grid{grid-template-columns:1fr}
   .why-left{padding-right:0;margin-bottom:36px}
   .why-right{border-left:none;border-top:1px solid #222;padding-left:0;padding-top:36px}
@@ -92,15 +95,17 @@ footer strong{color:#fff}
 </style></head><body>
 
 <nav>
-  <div class="nav-logo">5J<span>Plumbing</span></div>
+  <div class="nav-logo">5J<span> Plumbing</span></div>
   <a class="nav-cta" href="tel:8305561466">Call Now</a>
 </nav>
 
 <section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1400&q=80" alt="plumbing background"/></div>
+  <div class="hero-gradient"></div>
   <div class="hero-text">
     <div class="badge">Seguin, TX · Licensed &amp; Insured</div>
     <h1>Seguin's Trusted<br/><span>Expert Plumbing.</span></h1>
-    <p class="hero-sub">Professional plumbing services for homes and businesses in Seguin, TX. Fast response, honest pricing, done right.</p>
+    <p class="hero-sub">Professional plumbing services for homes and businesses in Seguin, TX. Fast response, honest pricing, done right the first time.</p>
     <div class="hero-btns">
       <a href="tel:8305561466" class="btn-p">📞 (830) 556-1466</a>
       <a href="#services" class="btn-s">Our Services</a>
@@ -112,8 +117,8 @@ footer strong{color:#fff}
       <div><div class="stat-v">5.0 ⭐</div><div class="stat-l">Google Rating</div></div>
     </div>
   </div>
-  <div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="5J Plumbing"/>
+  <div class="hero-img-col">
+    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=900&q=80" alt="5J Plumbing"/>
     <div class="img-badge"><div class="s">★★★★★</div><div>5.0 on Google · Seguin, TX</div></div>
   </div>
 </section>
@@ -133,15 +138,15 @@ footer strong{color:#fff}
     <div class="service-card"><div class="service-icon">🔧</div><h3>Residential Plumbing</h3><p>Full-service plumbing for homeowners. Repairs, installs, and everything in between.</p></div>
     <div class="service-card"><div class="service-icon">🏢</div><h3>Commercial Plumbing</h3><p>Reliable commercial solutions with minimal downtime and maximum quality.</p></div>
     <div class="service-card"><div class="service-icon">🚨</div><h3>Emergency Service</h3><p>24/7 emergency response. We show up fast when it matters most.</p></div>
-    <div class="service-card"><div class="service-icon">🚿</div><h3>Drain Cleaning</h3><p>Clogged drains cleared fast. We use professional-grade equipment every time.</p></div>
+    <div class="service-card"><div class="service-icon">🚿</div><h3>Drain Cleaning</h3><p>Clogged drains cleared fast using professional-grade equipment.</p></div>
     <div class="service-card"><div class="service-icon">🌡️</div><h3>Water Heater Service</h3><p>Installation, repair, and replacement of all water heater types.</p></div>
     <div class="service-card"><div class="service-icon">🔍</div><h3>Leak Detection</h3><p>Advanced leak detection to protect your home before small problems get big.</p></div>
   </div>
 </section>
 
 <div class="img-strip">
-  <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Plumbing work"/>
-  <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" alt="Professional plumber"/>
+  <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80" alt="Plumbing pipe repair"/>
+  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Professional plumbing tools"/>
 </div>
 
 <section class="sec why">
@@ -178,27 +183,21 @@ footer strong{color:#fff}
   <div class="pricing-hdr">
     <div class="sec-label">Pricing</div>
     <h2 class="sec-title">Simple, Honest Pricing.</h2>
-    <p class="sec-sub" style="margin:0 auto;text-align:center">No surprise fees. Just quality work at a fair price.</p>
+    <p style="color:#666;font-size:.98rem;text-align:center">No surprise fees. Just quality work at a fair price.</p>
   </div>
   <div class="pkg-grid">
     <div class="pkg">
-      <div class="pkg-name">Basic</div>
-      <div class="pkg-price">$299+</div>
-      <div class="pkg-note">per service call</div>
+      <div class="pkg-name">Basic</div><div class="pkg-price">$299+</div><div class="pkg-note">per service call</div>
       <ul class="pkg-items"><li>Single service call</li><li>Parts &amp; labor</li><li>30-day warranty</li><li>Free estimate</li></ul>
       <a href="tel:8305561466" class="pkg-btn">Call to Book</a>
     </div>
     <div class="pkg hot">
-      <div class="pkg-name">Standard</div>
-      <div class="pkg-price">$599+</div>
-      <div class="pkg-note">full project</div>
+      <div class="pkg-name">Standard</div><div class="pkg-price">$599+</div><div class="pkg-note">full project</div>
       <ul class="pkg-items"><li>Full project service</li><li>Priority scheduling</li><li>90-day warranty</li><li>Free estimate</li><li>Follow-up inspection</li></ul>
       <a href="tel:8305561466" class="pkg-btn">Call to Book</a>
     </div>
     <div class="pkg">
-      <div class="pkg-name">Premium</div>
-      <div class="pkg-price">Custom</div>
-      <div class="pkg-note">large &amp; complex jobs</div>
+      <div class="pkg-name">Premium</div><div class="pkg-price">Custom</div><div class="pkg-note">large &amp; complex jobs</div>
       <ul class="pkg-items"><li>Multi-phase projects</li><li>1-year warranty</li><li>Dedicated manager</li><li>Priority response</li></ul>
       <a href="tel:8305561466" class="pkg-btn">Call to Book</a>
     </div>
