@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cosmo Contour & Spa | Miami Beach, FL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --gold: #C9A96E; --gold-light: #E8D5B0; --dark: #0f0f0f; --mid: #4a4a4a; --soft: #f9f6f2; --white: #ffffff; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; letter-spacing: 2px; color: var(--dark); text-transform: uppercase; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: #666; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-btn { background: var(--gold); color: white; border: none; padding: 10px 24px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: opacity 0.2s; }
+    .nav-btn:hover { opacity: 0.85; }
+    .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--soft); }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1400&q=80'); background-size: cover; background-position: center; opacity: 0.18; }
+    .hero-content { position: relative; z-index: 2; max-width: 700px; padding: 120px 48px 80px; }
+    .hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 6px 16px; border-radius: 2px; margin-bottom: 28px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 7vw, 82px); font-weight: 300; line-height: 1.08; letter-spacing: -1px; color: var(--dark); margin-bottom: 24px; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p { font-size: 17px; font-weight: 300; line-height: 1.7; color: var(--mid); max-width: 480px; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary { background: var(--gold); color: white; padding: 16px 36px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: opacity 0.2s, transform 0.2s; display: inline-block; }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--dark); padding: 16px 36px; font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--dark); border-radius: 2px; transition: all 0.2s; display: inline-block; }
+    .btn-outline:hover { background: var(--dark); color: white; }
+    .trust-bar { background: var(--dark); padding: 20px 48px; display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: var(--gold-light); font-size: 13px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+    .services { padding: 100px 48px; background: var(--white); }
+    .section-label { text-align: center; font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .section-title { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 300; line-height: 1.15; color: var(--dark); margin-bottom: 64px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; max-width: 1200px; margin: 0 auto; }
+    .service-card { background: var(--soft); padding: 40px 36px; border-bottom: 3px solid transparent; transition: border-color 0.3s, background 0.3s; }
+    .service-card:hover { border-color: var(--gold); background: white; }
+    .service-icon { font-size: 28px; margin-bottom: 20px; }
+    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--dark); margin-bottom: 12px; }
+    .service-card p { font-size: 14px; line-height: 1.7; color: var(--mid); margin-bottom: 16px; }
+    .service-price { font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: 1px; }
+    .photo-strip { display: grid; grid-template-columns: repeat(4, 1fr); height: 280px; overflow: hidden; }
+    .photo-strip div { background-size: cover; background-position: center; transition: transform 0.5s; }
+    .photo-strip div:hover { transform: scale(1.04); }
+    .why-us { padding: 100px 48px; background: var(--soft); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .why-image { aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&q=80'); background-size: cover; background-position: center; border-radius: 4px; }
+    .why-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 300; color: var(--dark); margin-bottom: 24px; line-height: 1.2; }
+    .why-content p { font-size: 15px; line-height: 1.8; color: var(--mid); margin-bottom: 32px; }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .why-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: var(--mid); line-height: 1.6; }
+    .why-list li::before { content: '✦'; color: var(--gold); font-size: 12px; margin-top: 3px; flex-shrink: 0; }
+    .booking-section { padding: 100px 48px; background: var(--white); text-align: center; }
+    .booking-subtitle { font-size: 16px; color: var(--mid); margin-bottom: 48px; font-weight: 300; }
+    .calendly-wrapper { max-width: 900px; margin: 0 auto; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.06); }
+    .reviews { padding: 100px 48px; background: var(--dark); }
+    .reviews .section-label { color: var(--gold); }
+    .reviews .section-title { color: white; margin-bottom: 56px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .review-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 36px; border-radius: 4px; }
+    .stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+    .review-text { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.75); margin-bottom: 20px; font-style: italic; }
+    .reviewer { font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
+    .cta-section { padding: 100px 48px; background: var(--soft); text-align: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 60px); font-weight: 300; color: var(--dark); margin-bottom: 20px; }
+    .cta-section p { font-size: 16px; color: var(--mid); margin-bottom: 40px; }
+    .cta-location { font-size: 13px; color: var(--gold); font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-top: 32px; }
+    footer { background: var(--dark); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: white; letter-spacing: 2px; text-transform: uppercase; }
+    .footer-logo span { color: var(--gold); }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .footer-ig { font-size: 13px; color: var(--gold); text-decoration: none; letter-spacing: 1px; }
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; } .nav-links { display: none; }
+      .hero-content { padding: 100px 24px 60px; }
+      .trust-bar { gap: 24px; padding: 20px 24px; }
+      .services { padding: 60px 24px; }
+      .photo-strip { grid-template-columns: repeat(2, 1fr); height: 200px; }
+      .why-us { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+      .booking-section { padding: 60px 24px; }
+      .reviews { padding: 60px 24px; }
+      .cta-section { padding: 60px 24px; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">COSMO <span>·</span> CONTOUR & SPA</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#booking">Book</a></li>
+    </ul>
+    <button class="nav-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Now</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Miami Beach, FL</div>
+      <h1>Miami's First<br><em>Infrared Gym Medspa.</em></h1>
+      <p>The Cosmo Method™ — cutting-edge body sculpting, peptide therapies, and infrared treatments at Carillon Hotel Miami. 250K+ followers. Results guaranteed.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-primary">Book Appointment</a>
+        <a href="#services" class="btn-outline">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-item"><span>✦</span> Miami's first Infrared Gym Medspa</div><div class="trust-item"><span>✦</span> Located inside Carillon Hotel Miami Beach</div><div class="trust-item"><span>✦</span> The Cosmo Method™ — proprietary sculpting system</div><div class="trust-item"><span>✦</span> 250,000+ Instagram followers — results speak volumes</div>
+  </div>
+
+  <section class="services" id="services">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Services Built<br>Around You</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <h3>Body Sculpting</h3>
+        <p>The Cosmo Method™ — non-invasive body contouring with visible results.</p>
+        <div class="service-price">Call for pricing</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💉</div>
+        <h3>Peptide Therapy</h3>
+        <p>Advanced peptide protocols for anti-aging, recovery, and performance.</p>
+        <div class="service-price">Call for pricing</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌡️</div>
+        <h3>Infrared Treatments</h3>
+        <p>Miami's first infrared gym medspa experience at Carillon Hotel.</p>
+        <div class="service-price">Call for pricing</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Skin Rejuvenation</h3>
+        <p>Medical-grade facials and skin treatments for lasting glow.</p>
+        <div class="service-price">Call for pricing</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💪</div>
+        <h3>Body Contouring</h3>
+        <p>Targeted fat reduction and body shaping without surgery.</p>
+        <div class="service-price">Call for pricing</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧬</div>
+        <h3>Wellness Protocols</h3>
+        <p>Customized wellness plans combining fitness, nutrition, and medspa.</p>
+        <div class="service-price">Call for pricing</div>
+      </div></div>
+  </section>
+
+  <div class="photo-strip">
+    <div style="background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80')"></div>
+    <div style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80')"></div>
+    <div style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80')"></div>
+    <div style="background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80')"></div>
+  </div>
+
+  <section style="background: var(--soft); padding: 100px 0;" id="about">
+    <div class="why-us">
+      <div class="why-image"></div>
+      <div class="why-content">
+        <h2>Why Clients Choose Cosmo</h2>
+        <p>The Cosmo Method™ — cutting-edge body sculpting, peptide therapies, and infrared treatments at Carillon Hotel Miami. 250K+ followers. Results guaranteed.</p>
+        <ul class="why-list">
+          <li>Miami's first Infrared Gym Medspa</li>
+          <li>Located inside Carillon Hotel Miami Beach</li>
+          <li>The Cosmo Method™ — proprietary sculpting system</li>
+          <li>250,000+ Instagram followers — results speak volumes</li>
+          <li>Featured by top influencers and media</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-section" id="booking">
+    <p class="section-label">Ready to Get Started?</p>
+    <h2 class="section-title">Book a Consultation</h2>
+    <p class="booking-subtitle">Pick a time that works for you — takes less than 2 minutes.</p>
+    <div class="calendly-wrapper">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/roberto-struxmedia/30min" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
+  </section>
+
+  <section class="reviews">
+    <p class="section-label">Client Love</p>
+    <h2 class="section-title">What They're Saying</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The Cosmo Method is no joke. I lost inches in places I've been trying to target for years."</p>
+        <div class="reviewer">— Valeria M.</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The infrared gym experience is unlike anything in Miami. Worth every penny."</p>
+        <div class="reviewer">— Marcus J.</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"I've been coming for 3 months and the results are insane. Staff is incredible too."</p>
+        <div class="reviewer">— Diana P.</div>
+      </div></div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Your Body Transformation Starts Here</h2>
+    <p>Book online in seconds — same-day availability.</p>
+    <a href="#booking" class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'}); return false;">Book Now →</a>
+    <p class="cta-location">📍 Miami Beach, FL</p>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Cosmo <span>Contour &</span></div>
+    <p>© 2026 Cosmo Contour & Spa. All rights reserved.</p>
+    <a href="https://instagram.com/cosmocontour" class="footer-ig">@cosmocontour</a>
+  </footer>
+</body>
+</html>
