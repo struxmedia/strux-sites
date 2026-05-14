@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>More Than Muscle | Personal Trainer Fort Lauderdale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    :root{--black:#080808;--dark:#0f0f0f;--card:#141414;--border:rgba(255,255,255,0.07);--white:#ffffff;--gray:rgba(255,255,255,0.45);--accent:#E8FF00;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;transition:background 0.4s;}
+    nav.scrolled{background:rgba(8,8,8,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);}
+    .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--white);}
+    .nav-logo span{color:var(--accent);}
+    .nav-cta{background:var(--accent);color:var(--black);padding:10px 24px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+    .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
+    .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1800&q=90');background-size:cover;background-position:center top;filter:brightness(0.3);}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,1) 0%,rgba(8,8,8,0.4) 50%,rgba(8,8,8,0.1) 100%);}
+    .hero-content{position:relative;z-index:2;width:100%;padding:0 48px 80px;}
+    .hero-tag{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block;}
+    .hero-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(70px,12vw,160px);line-height:0.88;letter-spacing:2px;color:var(--white);margin-bottom:28px;}
+    .hero-headline span{color:var(--accent);display:block;}
+    .hero-desc{font-size:15px;font-weight:300;color:var(--gray);line-height:1.8;max-width:440px;margin-bottom:32px;}
+    .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+    .btn-accent{background:var(--accent);color:var(--black);padding:16px 40px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+    .btn-ghost{color:var(--white);padding:16px 32px;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid var(--border);border-radius:2px;}
+    .marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;background:var(--dark);}
+    .marquee-track{display:flex;gap:48px;white-space:nowrap;animation:marquee 22s linear infinite;}
+    .marquee-item{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:3px;color:var(--gray);flex-shrink:0;}
+    .marquee-item.ac{color:var(--accent);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    section{padding:80px 48px;}
+    .section-tag{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block;}
+    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,6vw,80px);letter-spacing:1px;color:var(--white);line-height:0.95;margin-bottom:40px;}
+    .section-title span{color:var(--accent);}
+    .services{background:var(--dark);}
+    .services-list{border-top:1px solid var(--border);}
+    .service-row{border-bottom:1px solid var(--border);display:grid;grid-template-columns:50px 1fr 40px;align-items:center;gap:24px;padding:24px 0;}
+    .service-num{font-size:11px;letter-spacing:2px;color:var(--gray);}
+    .service-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4vw,48px);color:var(--white);}
+    .service-arrow{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:14px;}
+    .programs{background:var(--black);}
+    .programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+    .program-card{background:var(--card);border:1px solid var(--border);padding:36px 28px;}
+    .program-icon{font-size:26px;margin-bottom:20px;}
+    .program-card h3{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;color:var(--white);margin-bottom:10px;}
+    .program-card p{font-size:13px;font-weight:300;color:var(--gray);line-height:1.8;margin-bottom:20px;}
+    .program-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .program-list li{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:8px;}
+    .program-list li::before{content:'—';color:var(--accent);}
+    .pricing{background:var(--dark);}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+    .pricing-card{background:var(--card);border:1px solid var(--border);padding:36px 28px;position:relative;}
+    .pricing-card.featured{border-color:var(--accent);background:rgba(232,255,0,0.05);}
+    .pricing-badge{position:absolute;top:16px;right:16px;background:var(--accent);color:var(--black);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;}
+    .pricing-tier{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block;}
+    .pricing-card h3{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);margin-bottom:8px;}
+    .pricing-card>p{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:24px;font-weight:300;}
+    .pricing-price{font-family:'Bebas Neue',sans-serif;font-size:58px;color:var(--white);line-height:1;}
+    .pricing-price sup{font-size:24px;font-family:'Inter',sans-serif;}
+    .pricing-period{font-size:12px;color:var(--gray);margin-top:4px;margin-bottom:24px;}
+    .pricing-cta{display:block;text-align:center;padding:13px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;margin-bottom:24px;cursor:pointer;border:none;width:100%;font-family:'Inter',sans-serif;}
+    .pricing-cta-outline{border:1px solid var(--border);color:var(--white);background:transparent;}
+    .pricing-cta-filled{background:var(--accent);color:var(--black);border:1px solid var(--accent);}
+    .pricing-features{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .pricing-features li{font-size:13px;color:var(--gray);font-weight:300;display:flex;align-items:flex-start;gap:8px;}
+    .pricing-features li::before{content:'✦';color:var(--accent);font-size:9px;flex-shrink:0;margin-top:4px;}
+    .testimonials{background:var(--black);}
+    .testimonials-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:40px;}
+    .testimonial-card{background:var(--card);border:1px solid var(--border);padding:36px;}
+    .testimonial-stars{color:var(--accent);font-size:13px;letter-spacing:2px;margin-bottom:16px;}
+    .testimonial-quote{font-size:15px;font-weight:300;color:var(--white);line-height:1.7;font-style:italic;margin-bottom:24px;}
+    .testimonial-author{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+    .testimonial-role{font-size:12px;color:var(--gray);}
+    .book{background:var(--accent);padding:72px 48px;text-align:center;}
+    .book h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,88px);color:var(--black);letter-spacing:2px;line-height:0.9;margin-bottom:16px;}
+    .book p{font-size:15px;color:rgba(0,0,0,0.6);max-width:460px;margin:0 auto 32px;line-height:1.7;}
+    .btn-black{background:var(--black);color:var(--white);padding:16px 44px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;}
+    footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+    .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--white);}
+    .footer-logo span{color:var(--accent);}
+    footer p{font-size:12px;color:var(--gray);}
+    @media(max-width:768px){
+      nav{padding:16px 20px;}
+      section{padding:56px 20px;}
+      .hero-content{padding:0 20px 56px;}
+      .programs-grid,.pricing-grid{grid-template-columns:1fr;}
+      .testimonials-grid{grid-template-columns:1fr;}
+      .service-row{grid-template-columns:40px 1fr;}
+      .service-arrow{display:none;}
+      footer{padding:32px 20px;flex-direction:column;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-logo">MORE <span>FIT</span></div>
+    <button class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roberto-struxmedia/30min'});return false;">Book Free Consult</button>
+  </nav>
+
+  <section class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Personal Training · Fort Lauderdale, FL</span>
+      <h1 class="hero-headline">TRAIN HARD.<br><span>GET RESULTS.</span></h1>
+      <p class="hero-desc">Elite 1-on-1 personal training in Fort Lauderdale. Custom programs built around your goals — fat loss, muscle, strength, or total transformation.</p>
+      <div class="hero-actions">
+        <button class="btn-accent" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roberto-struxmedia/30min'});return false;">Book Free Consult</button>
+        <a href="#programs" class="btn-ghost">View Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">STRENGTH TRAINING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">FAT LOSS</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">MUSCLE BUILDING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">NUTRITION COACHING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">ONLINE COACHING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">BODY TRANSFORMATION</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">STRENGTH TRAINING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">FAT LOSS</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">MUSCLE BUILDING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">NUTRITION COACHING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">ONLINE COACHING</span><span class="marquee-item ac">✦</span>
+      <span class="marquee-item">BODY TRANSFORMATION</span><span class="marquee-item ac">✦</span>
+    </div>
+  </div>
+
+  <section class="services">
+    <span class="section-tag">What I Offer</span>
+    <h2 class="section-title">SERVICES BUILT<br>FOR <span>RESULTS</span></h2>
+    <div class="services-list">
+      <div class="service-row"><span class="service-num">/01</span><span class="service-name">1-ON-1 TRAINING</span><div class="service-arrow">→</div></div>
+      <div class="service-row"><span class="service-num">/02</span><span class="service-name">ONLINE COACHING</span><div class="service-arrow">→</div></div>
+      <div class="service-row"><span class="service-num">/03</span><span class="service-name">NUTRITION COACHING</span><div class="service-arrow">→</div></div>
+      <div class="service-row"><span class="service-num">/04</span><span class="service-name">GROUP SESSIONS</span><div class="service-arrow">→</div></div>
+    </div>
+  </section>
+
+  <section class="programs" id="programs">
+    <span class="section-tag">Training Programs</span>
+    <h2 class="section-title">PICK YOUR<br><span>PROGRAM</span></h2>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-icon">🔥</div>
+        <h3>FAT LOSS</h3>
+        <p>Burn fat, keep muscle. High-intensity training and strategic nutrition to shred efficiently.</p>
+        <ul class="program-list">
+          <li>3–5 sessions per week</li><li>Custom cardio protocol</li><li>Calorie & macro targets</li><li>Weekly progress tracking</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">💪</div>
+        <h3>MUSCLE BUILDING</h3>
+        <p>Structured hypertrophy programming to add serious size and strength the right way.</p>
+        <ul class="program-list">
+          <li>Progressive overload system</li><li>4–5 lifting sessions/week</li><li>Nutrition for muscle gain</li><li>Body composition tracking</li>
+        </ul>
+      </div>
+      <div class="program-card">
+        <div class="program-icon">⚡</div>
+        <h3>TOTAL TRANSFORMATION</h3>
+        <p>The full package — fat loss, muscle, nutrition, and lifestyle coaching all in one.</p>
+        <ul class="program-list">
+          <li>1-on-1 personal sessions</li><li>Full nutrition overhaul</li><li>Daily check-ins</li><li>12-week commitment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <span class="section-tag">Investment</span>
+    <h2 class="section-title">PLANS THAT<br><span>FIT YOUR LIFE</span></h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <span class="pricing-tier">Starter</span>
+        <h3>ONLINE COACHING</h3>
+        <p>Elite coaching and accountability from anywhere.</p>
+        <div class="pricing-price"><sup>$</sup>197</div>
+        <div class="pricing-period">/ Month</div>
+        <button class="pricing-cta pricing-cta-outline" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roberto-struxmedia/30min'});return false;">Get Started</button>
+        <ul class="pricing-features"><li>Custom training program</li><li>Nutrition & macro plan</li><li>Weekly check-ins</li><li>Direct messaging access</li></ul>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <span class="pricing-tier">Growth</span>
+        <h3>1-ON-1 TRAINING</h3>
+        <p>In-person sessions in Fort Lauderdale with full nutrition support.</p>
+        <div class="pricing-price"><sup>$</sup>350</div>
+        <div class="pricing-period">/ Month (8 Sessions)</div>
+        <button class="pricing-cta pricing-cta-filled" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roberto-struxmedia/30min'});return false;">Get Started</button>
+        <ul class="pricing-features"><li>8 x 1-hour sessions/month</li><li>Custom training plan</li><li>Nutrition coaching included</li><li>Progress tracking</li><li>24/7 messaging support</li></ul>
+      </div>
+      <div class="pricing-card">
+        <span class="pricing-tier">Elite</span>
+        <h3>TOTAL TRANSFORMATION</h3>
+        <p>The complete 12-week body transformation experience.</p>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-period">/ 12-Week Program</div>
+        <button class="pricing-cta pricing-cta-outline" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roberto-struxmedia/30min'});return false;">Let's Talk</button>
+        <ul class="pricing-features"><li>12 weeks, 3x/week sessions</li><li>Full nutrition overhaul</li><li>Daily accountability</li><li>Before & after documentation</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <span class="section-tag">Client Results</span>
+    <h2 class="section-title">REAL PEOPLE.<br><span>REAL RESULTS.</span></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Lost 28 lbs in 3 months and actually kept it off. The nutrition plan alone was worth every penny — completely changed how I eat."</p>
+        <div class="testimonial-author">Maria C.</div><div class="testimonial-role">Lost 28 lbs · Fort Lauderdale, FL</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Best investment I've made in myself. Nothing compares to having a real coach who knows your name and actually pushes you."</p>
+        <div class="testimonial-author">Jason R.</div><div class="testimonial-role">Gained 15 lbs muscle · South Florida</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"As a busy mom I needed something realistic. I'm in the best shape of my life at 38 thanks to the online coaching program."</p>
+        <div class="testimonial-author">Sofia M.</div><div class="testimonial-role">Online Coaching Client · FL</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Went from zero gym experience to squatting my bodyweight in 4 months. The programming is smart and the results speak for themselves."</p>
+        <div class="testimonial-author">Marcus T.</div><div class="testimonial-role">12-Week Transformation · FL</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <h2>READY TO<br>START?</h2>
+    <p>Book your free 15-minute consultation. We'll talk goals and I'll tell you exactly how to get there.</p>
+    <button class="btn-black" onclick="Calendly.initPopupWidget({url:'https://calendly.com/roberto-struxmedia/30min'});return false;">Book Free Consult →</button>
+  </section>
+
+  <footer>
+    <div class="footer-logo">MORE <span>FIT</span></div>
+    <p>Personal Training · Fort Lauderdale, FL · Built by Strux Media</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);});
+  </script>
+</body>
+</html>
